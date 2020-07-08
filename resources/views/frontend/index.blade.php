@@ -3,7 +3,7 @@
 <!-- banner part start-->
 @section('content')
 
-{{--  // làm lại header  --}}
+{{--  // làm lại header thêm nhánh develop  --}}
 <section class="banner_part">
     <div class="container">
         <div class="row align-items-center">
