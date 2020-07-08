@@ -13,6 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('','frontend\HomeController@GetIndex');
+Route::get('contact','frontend\HomeController@GetContact');
+Route::get('about','frontend\HomeController@GetAbout');
+Route::group(['prefix' => 'product'], function () {
+    Route::get('', 'frontend\ProductController@GetProduct');
+    Route::get('detail', 'frontend\ProductController@DetailProduct');
+    Route::get('learn', 'frontend\ProductController@LearnProduct');
+});
+Route::group(['prefix' => 'blog'], function () {
+    Route::get('','frontend\BlogController@GetBlog');
+    Route::get('detail','frontend\BlogController@DetailBlog');
 });
